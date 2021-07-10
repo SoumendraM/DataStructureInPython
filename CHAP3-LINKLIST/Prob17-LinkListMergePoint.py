@@ -21,20 +21,13 @@ def mergePointLinkList(ll1, ll2):
     curr2 = ll2.head
 
     while curr1.getNext() != None:
-        if hs.isHashed(curr1) != True:
-            print("ll1:", curr1.getData())
-            hs.hashIt(curr1)
-        else:
-            return curr1
+        hs.hashIt(curr1)
         curr1 = curr1.getNext()
     
     while curr2.getNext() != None:   
-        if hs.isHashed(curr2) != True:
-            print("ll2:", curr2.getData())
-            hs.hashIt(curr2)
-        else:
+        if hs.isHashed(curr2) == True:
             return curr2
-        curr2 = curr2.getNext()
+        curr2 = curr2.getNext()    
  
     return None
 
